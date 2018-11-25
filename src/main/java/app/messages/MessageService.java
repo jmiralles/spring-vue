@@ -1,10 +1,15 @@
 package app.messages;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class MessageService {
 
   private MessageRepository repository;
 
-  public MessageService (MessageRepository repository) {
+  @Autowired
+  public void setRepository(MessageRepository repository) {
     this.repository = repository;
   }
 
